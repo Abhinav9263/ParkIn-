@@ -135,7 +135,7 @@ ParkIn uses a layered architecture comprising:
 
 ```bash
 # Clone the repository
-https://github.com/SouravUpadhyay7/ParkingApp
+https://github.com/Abhinav9263/ParkIn
 
 # Navigate to the project directory
 cd parkin
