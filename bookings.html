@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Bookings - ParkIn </title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/bookings.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&family=Hubot+Sans:ital,wght@0,200..900;1,200..900&family=Iceland&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Nova+Square&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Space+Grotesk:wght@300..700&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&family=Yatra+One&display=swap');
+    </style>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&family=Hubot+Sans:ital,wght@0,200..900;1,200..900&family=Iceland&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Nova+Square&family=Oxanium:wght@200..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Space+Grotesk:wght@300..700&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&family=Yatra+One&display=swap');
+    </style>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&family=Hubot+Sans:ital,wght@0,200..900;1,200..900&family=Iceland&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Nova+Square&family=Oxanium:wght@200..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Space+Grotesk:wght@300..700&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&family=Yatra+One&display=swap');
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-brand">
+            <a href="index.html"><span class="parknet-font">ParkIn</span></a>
+        </div>
+        <div class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <ul class="nav-menu">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="search.html">Find Parking</a></li>
+            <li><a href="list-space.html">List Your Space</a></li>
+            <li><a href="bookings.html" class="active">My Bookings</a></li>
+            <li><a href="profile.html">Profile</a></li>
+            <li><button class="theme-toggle">
+                <i class="fas fa-moon"></i>
+            </button></li>
+        </ul>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="bookings-container">
+        <h1>My Bookings</h1>
+
+        <!-- Booking Tabs -->
+        <div class="booking-tabs">
+            <button class="tab-btn active" data-tab="active">Active Bookings</button>
+            <button class="tab-btn" data-tab="upcoming">Upcoming</button>
+            <button class="tab-btn" data-tab="past">Past Bookings</button>
+        </div>
+
+        <!-- Active Bookings -->
+        <section id="active-bookings" class="booking-section active">
+            <div class="booking-cards">
+                <!-- Active bookings will be populated here -->
+            </div>
+        </section>
+
+        <!-- Upcoming Bookings -->
+        <section id="upcoming-bookings" class="booking-section">
+            <div class="booking-cards">
+                <!-- Upcoming bookings will be populated here -->
+            </div>
+        </section>
+
+        <!-- Past Bookings -->
+        <section id="past-bookings" class="booking-section">
+            <div class="booking-cards">
+                <!-- Past bookings will be populated here -->
+            </div>
+        </section>
+
+        <!-- Booking Details Modal -->
+        <div id="booking-modal" class="modal">
+            <div class="modal-content">
+                <span class="close-modal">&times;</span>
+                <h2>Booking Details</h2>
+                <div class="booking-details">
+                    <!-- Booking details will be populated here -->
+                </div>
+                <div class="modal-actions">
+                    <button class="btn btn-primary extend-booking">Extend Booking</button>
+                    <button class="btn btn-secondary cancel-booking">Cancel Booking</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Extension Modal -->
+        <div id="extension-modal" class="modal">
+            <div class="modal-content">
+                <span class="close-modal">&times;</span>
+                <h2>Extend Booking</h2>
+                <form id="extension-form">
+                    <div class="form-group">
+                        <label for="extension-duration">Additional Duration</label>
+                        <select id="extension-duration" required>
+                            <option value="1">1 Hour</option>
+                            <option value="2">2 Hours</option>
+                            <option value="4">4 Hours</option>
+                            <option value="8">8 Hours</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Additional Cost</label>
+                        <p class="extension-cost">₹0.00</p>
+                    </div>
+                    <div class="modal-actions">
+                        <button type="submit" class="btn btn-primary">Confirm Extension</button>
+                        <button type="button" class="btn btn-secondary close-modal">Cancel</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h2><span>ParkIn</span></h2>
+                <p>Decentralized parking solutions for everyone</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="search.html">Find Parking</a></li>
+                    <li><a href="list-space.html">List Your Space</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Connect With Us</h3>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 ParkIn. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/bookings.js"></script>
+</body>
+</html> 

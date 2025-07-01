@@ -1,0 +1,241 @@
+
+.brand-font{
+    font-family: "Nova Square", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.footer-brand {
+    font-family: "Nova Square", sans-serif;
+    /* You can add other styles if needed */
+    font-weight: 400;
+}
+
+
+
+
+/* Search Page Layout */
+.search-container {
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    gap: 2rem;
+    padding: 2rem;
+    margin-top: 60px;
+    min-height: calc(100vh - 60px);
+}
+
+/* Search Filters */
+.search-filters {
+    background: var(--card-bg);
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: var(--shadow);
+    height: fit-content;
+}
+
+.search-filters h2 {
+    margin-bottom: 1.5rem;
+    color: var(--text-color);
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: var(--text-color);
+}
+
+.form-group input[type="text"],
+.form-group input[type="date"],
+.form-group input[type="time"],
+.form-group select {
+    width: 100%;
+    padding: 0.8rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background: var(--bg-color);
+    color: var(--text-color);
+}
+
+.datetime-inputs {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+
+/* Checkbox Styles */
+.checkbox-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.checkbox-group label {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    cursor: pointer;
+}
+
+.checkbox-group input[type="checkbox"] {
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
+}
+
+/* Price Range Slider */
+.price-range {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+input[type="range"] {
+    width: 100%;
+    cursor: pointer;
+}
+
+#price-display {
+    text-align: center;
+    color: var(--text-color);
+}
+
+/* Map and Results */
+.search-results {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+#map {
+    height: 400px;
+    border-radius: 10px;
+    box-shadow: var(--shadow);
+}
+
+.results-list {
+    background: var(--card-bg);
+    border-radius: 10px;
+    padding: 1rem;
+    box-shadow: var(--shadow);
+    min-height: 200px;
+}
+
+/* Parking Space Card */
+.parking-space {
+    display: grid;
+    grid-template-columns: 120px 1fr auto;
+    gap: 1rem;
+    padding: 1rem;
+    background: var(--bg-color);
+    border-radius: 8px;
+    margin-bottom: 1rem;
+    transition: var(--transition);
+}
+
+.parking-space:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow);
+}
+
+.parking-space img {
+    width: 120px;
+    height: 90px;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+.parking-space-info h3 {
+    margin-bottom: 0.5rem;
+    color: var(--text-color);
+}
+
+.parking-space-info p {
+    color: var(--text-color);
+    font-size: 0.9rem;
+    margin-bottom: 0.3rem;
+}
+
+.parking-space-price {
+    text-align: right;
+}
+
+.parking-space-price .price {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+}
+
+.facility-tags {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    margin-top: 0.5rem;
+}
+
+.facility-tag {
+    background: var(--card-bg);
+    padding: 0.2rem 0.5rem;
+    border-radius: 15px;
+    font-size: 0.8rem;
+    color: var(--text-color);
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .search-container {
+        grid-template-columns: 250px 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .search-container {
+        grid-template-columns: 1fr;
+    }
+
+    .parking-space {
+        grid-template-columns: 1fr;
+    }
+
+    .parking-space img {
+        width: 100%;
+        height: 200px;
+    }
+
+    .parking-space-price {
+        text-align: left;
+    }
+}
+
+/* Dark Theme Adjustments */
+[data-theme="dark"] .form-group input,
+[data-theme="dark"] .form-group select {
+    border-color: #444;
+}
+
+/* Loading State */
+.loading {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 200px;
+}
+
+.loading::after {
+    content: "";
+    width: 40px;
+    height: 40px;
+    border: 4px solid var(--card-bg);
+    border-top: 4px solid var(--primary-color);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+} 

@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ParkIn - Smart Parking Solutions</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/home.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&family=Hubot+Sans:ital,wght@0,200..900;1,200..900&family=Iceland&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Nova+Square&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Space+Grotesk:wght@300..700&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&family=Yatra+One&display=swap');
+    </style>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&family=Hubot+Sans:ital,wght@0,200..900;1,200..900&family=Iceland&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Nova+Square&family=Oxanium:wght@200..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Space+Grotesk:wght@300..700&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&family=Yatra+One&display=swap');
+    </style>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&family=Hubot+Sans:ital,wght@0,200..900;1,200..900&family=Iceland&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Nova+Square&family=Oxanium:wght@200..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Space+Grotesk:wght@300..700&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&family=Yatra+One&display=swap');
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-brand">
+            <a href="index.html"><span class="parknet-font">ParkIn</span></a>
+
+        </div>
+        <div class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <ul class="nav-menu">
+            <li><a href="index.html" class="active">Home</a></li>
+            <li><a href="search.html">Find Parking</a></li>
+            <li><a href="list-space.html">List Your Space</a></li>
+            <li><a href="bookings.html">My Bookings</a></li>
+            <li><a href="profile.html">Profile</a></li>
+            <li><button class="theme-toggle">
+                <i class="fas fa-moon"></i>
+            </button></li>
+        </ul>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Find Your <span>Perfect</span> Parking Spot</h1>
+            <p>Discover convenient parking spaces near you with our decentralized parking platform</p>
+            <div class="hero-buttons">
+                <a href="search.html" class="btn btn-primary">Find Parking</a>
+                <a href="list-space.html" class="btn btn-secondary">List Your Space</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- AI Smart Parking Section -->
+    <section class="ai-features">
+        <div class="ai-content">
+            <div class="ai-header">
+                <h2>AI-Powered <span>Smart</span> Parking</h2>
+                <p>Drive with confidence using our intelligent parking assistance system</p>
+            </div>
+            <div class="ai-grid">
+                <div class="ai-card">
+                    <div class="ai-icon">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <h3>Smart Route Planning</h3>
+                    <p>Our AI analyzes your travel patterns and suggests optimal routes with guaranteed parking availability.</p>
+                </div>
+                <div class="ai-card">
+                    <div class="ai-icon">
+                        <i class="fas fa-history"></i>
+                    </div>
+                    <h3>Personalized Recommendations</h3>
+                    <p>Get parking suggestions based on your past preferences, frequent destinations, and parking history.</p>
+                </div>
+                <div class="ai-card">
+                    <div class="ai-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>Predictive Availability</h3>
+                    <p>Real-time predictions for parking spot availability using historical data and current trends.</p>
+                </div>
+            </div>
+            <div class="ai-highlight">
+                <div class="highlight-content">
+                    <h3>Never Worry About Parking Again</h3>
+                    <p>Our advanced AI system learns from your parking habits to provide:</p>
+                    <ul>
+                        <li><i class="fas fa-check"></i> Personalized parking recommendations</li>
+                        <li><i class="fas fa-check"></i> Smart route optimization</li>
+                        <li><i class="fas fa-check"></i> Real-time availability predictions</li>
+                        <li><i class="fas fa-check"></i> Cost-effective parking options</li>
+                    </ul>
+                    <a href="search.html" class="btn btn-primary">Try Smart Parking</a>
+                </div>
+                <div class="highlight-image">
+                    <img src="https://images.unsplash.com/photo-1662021163989-f0d185a5442d?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8Y2FyJTIwcGFya2luZyUyMGluZGlhfGVufDB8fDB8fHww" alt="AI Parking Analysis">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- AI Pathfinding Animation -->
+    <section class="pathfinding-demo">
+        <div class="pathfinding-container">
+            <div class="pathfinding-content">
+                <h2>Smart Parking Algorithm in Action</h2>
+                <p>Watch how our AI finds the perfect parking spot for you in real-time</p>
+                
+                <div class="animation-container">
+                    <!-- Map Navigation Elements -->
+                    <div class="compass"></div>
+                    <div class="time-display">
+                        <i class="fas fa-clock"></i>
+                        <span>14:30</span>
+                    </div>
+
+                    <!-- Map Background -->
+                    <div class="map-background">
+                        <!-- Road -->
+                        <div class="road"></div>
+                        
+                        <!-- Crossroads -->
+                        <div class="crossroad crossroad-1"></div>
+                        <div class="crossroad crossroad-2"></div>
+                        
+                        <!-- Traffic Lights -->
+                        <div class="traffic-light traffic-light-1"></div>
+                        <div class="traffic-light traffic-light-2"></div>
+                        
+                        <!-- Buildings -->
+                        <div class="buildings">
+                            <div class="building building-1"></div>
+                            <div class="building building-2"></div>
+                            <div class="building building-3"></div>
+                            <div class="building building-4"></div>
+                            <div class="building building-5"></div>
+                        </div>
+                        
+                        <!-- Trees -->
+                        <div class="trees">
+                            <div class="tree tree-1"></div>
+                            <div class="tree tree-2"></div>
+                            <div class="tree tree-3"></div>
+                            <div class="tree tree-4"></div>
+                            <div class="tree tree-5"></div>
+                            <div class="tree tree-6"></div>
+                            <div class="tree tree-7"></div>
+                            <div class="tree tree-8"></div>
+                        </div>
+                        
+                        <!-- Points of Interest -->
+                        <div class="poi-icon restaurant">
+                            <i class="fas fa-utensils"></i>
+                        </div>
+                        <div class="poi-icon shop">
+                            <i class="fas fa-shopping-bag"></i>
+                        </div>
+                        <div class="poi-icon cafe">
+                            <i class="fas fa-coffee"></i>
+                        </div>
+
+                        <!-- Moving Background Cars -->
+                        <div class="moving-car moving-car-1">
+                            <i class="fas fa-car"></i>
+                        </div>
+                        <div class="moving-car moving-car-2">
+                            <i class="fas fa-truck"></i>
+                        </div>
+                        <div class="moving-car moving-car-3">
+                            <i class="fas fa-taxi"></i>
+                        </div>
+                        
+                        <!-- Location Markers -->
+                        <div class="location-marker marker-1"></div>
+                        <div class="location-marker marker-2"></div>
+
+                        <!-- Weather Effects -->
+                        <div class="weather-effects">
+                            <div class="rain"></div>
+                        </div>
+                    </div>
+
+                    <!-- Grid Overlay -->
+                    <div class="map-grid"></div>
+                    
+                    <!-- Main Animation Elements -->
+                    <div class="car-icon">
+                        <i class="fas fa-car"></i>
+                    </div>
+                    
+                    <div class="scanning-circle"></div>
+                    <div class="path-line"></div>
+                    
+                    <!-- Parking spots with tooltips -->
+                    <div class="parking-spots">
+                        <div class="parking-spot occupied"></div>
+                        <div class="info-tooltip">Occupied - Next available in 30min</div>
+                        
+                        <div class="parking-spot available"></div>
+                        <div class="info-tooltip">Available - Rs.70/hour</div>
+                        
+                        <div class="parking-spot selected"></div>
+                        <div class="info-tooltip">Best Match - 2min walk to destination</div>
+                        
+                        <div class="parking-spot occupied"></div>
+                        <div class="info-tooltip">Reserved until 16:00</div>
+                    </div>
+
+                    <!-- Distance Indicators -->
+                    <div class="distance-line" style="width: 100px; top: 40%; left: 30%;"></div>
+                    <div class="distance-label" style="top: 40%; left: 35%;">250m</div>
+                    
+                    <!-- Success message -->
+                    <div class="success-message">
+                        <i class="fas fa-check-circle"></i> Perfect spot found!
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- AI Parking Assistant -->
+    <section class="ai-assistant">
+        <div class="assistant-container">
+            <div class="assistant-content">
+                
+                <h2 class="bot-title">
+                    <span class="bot-name">ParkMate</span> - Your AI Parking Assistant
+                </h2>
+                
+                <p>Experience seamless parking with our intelligent AI assistant</p>
+                
+                <div class="assistant-features">
+                    <div class="assistant-card">
+                        <div class="assistant-icon">
+                            <i class="fas fa-robot"></i>
+                        </div>
+                        <h3>Smart Recommendations</h3>
+                        <ul>
+                            <li><i class="fas fa-check"></i> Learns your parking preferences</li>
+                            <li><i class="fas fa-check"></i> Suggests spots based on your schedule</li>
+                            <li><i class="fas fa-check"></i> Adapts to your booking history</li>
+                        </ul>
+                    </div>
+                    <div class="assistant-chat">
+                        <div class="chat-interface">
+                            <div class="chat-message bot">
+                                <i class="fas fa-robot"></i>
+                                <p>Good morning! I notice you usually park near Central Station on Mondays. Would you like me to find available spots for tomorrow?</p>
+                            </div>
+                            <div class="chat-message user">
+                                <p>Yes, please! I need parking from 9 AM to 6 PM.</p>
+                            </div>
+                            <div class="chat-message bot">
+                                <i class="fas fa-robot"></i>
+                                <p>I've found 3 spots that match your preferences, including your favorite covered parking area. Would you like to see them?</p>
+                            </div>
+                        </div>
+                        <button class="btn btn-primary">Try ParkMate Now</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Voice Commands Section -->
+    <section class="voice-commands">
+        <div class="voice-container">
+            <div class="voice-content">
+                <h2>Voice-Enabled Parking Experience</h2>
+                <p>Park smarter with hands-free voice commands</p>
+
+                <div class="voice-demo">
+                    <div class="voice-interface">
+                        <div class="voice-animation">
+                            <div class="voice-wave"></div>
+                            <div class="voice-wave"></div>
+                            <div class="voice-wave"></div>
+                            <i class="fas fa-microphone"></i>
+                        </div>
+                        <div class="voice-text">
+                            "Hey ParkMate, find me parking near Central Station"
+                        </div>
+                    </div>
+
+                    <div class="voice-features-grid">
+                        <div class="voice-feature">
+                            <i class="fas fa-car"></i>
+                            <h3>While Driving</h3>
+                            <ul>
+                                <li>"Find parking near [location]"</li>
+                                <li>"Navigate to my parking spot"</li>
+                                <li>"Extend my parking time"</li>
+                            </ul>
+                        </div>
+                        <div class="voice-feature">
+                            <i class="fas fa-clock"></i>
+                            <h3>Time Management</h3>
+                            <ul>
+                                <li>"How much time is left?"</li>
+                                <li>"Add 1 hour to my parking"</li>
+                                <li>"Set parking reminder"</li>
+                            </ul>
+                        </div>
+                        <div class="voice-feature">
+                            <i class="fas fa-bookmark"></i>
+                            <h3>Quick Actions</h3>
+                            <ul>
+                                <li>"Book my favorite spot"</li>
+                                <li>"Cancel my reservation"</li>
+                                <li>"Save this location"</li>
+                            </ul>
+                        </div>
+                        <div class="voice-feature">
+                            <i class="fas fa-info-circle"></i>
+                            <h3>Information</h3>
+                            <ul>
+                                <li>"What are the rates here?"</li>
+                                <li>"Is covered parking available?"</li>
+                                <li>"Show my parking history"</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="voice-try-now">
+                        <button class="btn btn-primary">
+                            <i class="fas fa-microphone"></i>
+                            Try Voice Commands
+                        </button>
+                        <button class="btn btn-secondary voice-help">
+                            <i class="fas fa-question-circle"></i>
+                            View Commands
+                        </button>
+                        <p>Available on iOS and Android</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features">
+        <h2>Why Choose <span class="bot-name">ParkIn</span> ?</h2>
+
+        <div class="features-grid">
+            <div class="feature-card">
+                <i class="fas fa-map-marker-alt"></i>
+                <h3>Easy Location</h3>
+                <p>Find parking spots near you with real-time availability updates</p>
+            </div>
+            <div class="feature-card">
+                <i class="fas fa-shield-alt"></i>
+                <h3>Secure Booking</h3>
+                <p>Safe and secure parking space bookings with instant confirmation</p>
+            </div>
+            <div class="feature-card">
+                <i class="fas fa-wallet"></i>
+                <h3>Best Prices</h3>
+                <p>Competitive pricing with special offers and loyalty rewards</p>
+            </div>
+            <div class="feature-card">
+                <i class="fas fa-clock"></i>
+                <h3>24/7 Access</h3>
+                <p>Book parking spaces anytime, anywhere with our platform</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works -->
+    <section class="how-it-works">
+        <h2>How It Works</h2>
+        <div class="steps">
+            <div class="step">
+                <div class="step-number">1</div>
+                <h3>Search</h3>
+                <p>Find available parking spots in your desired location</p>
+            </div>
+            <div class="step">
+                <div class="step-number">2</div>
+                <h3>Book</h3>
+                <p>Reserve your spot with instant confirmation</p>
+            </div>
+            <div class="step">
+                <div class="step-number">3</div>
+                <h3>Park</h3>
+                <p>Follow directions to your reserved parking space</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Local Parking Section -->
+    <section class="local-parking">
+        <div class="local-parking-content">
+            <h2>Local <span>Parking</span> Solutions</h2>
+
+            <p>Join our community of trusted parking space owners</p>
+            
+            <div class="local-parking-grid">
+                <div class="local-parking-card">
+                    <div class="owner-profile">
+                        <img src="Images/male.PNG" alt="Space Owner">
+
+                        <div class="owner-info">
+                            <h3>Arindam Chatterjee</h3>
+                            <div class="reputation">
+                                <i class="fas fa-star"></i>
+                                <span>4.9</span>
+                                <span>(120 reviews)</span>
+                            </div>
+                            <span class="verified"><i class="fas fa-check-circle"></i> Verified Owner</span>
+                        </div>
+                    </div>
+                    <div class="space-details">
+                        <h4>Private Driveway - Science City Area</h4>
+                        <p><i class="fas fa-map-marker-alt"></i> Science City, Kolkata, 2.5 km away</p>
+                        <div class="amenities">
+                            <span><i class="fas fa-car"></i> 2 spots</span>
+                            <span><i class="fas fa-shield-alt"></i> 24/7 Security</span>
+                            <span><i class="fas fa-charging-station"></i> EV Charging</span>
+                        </div>
+                        <div class="price">
+                            <strong>₹40/hour
+                            </strong>
+                            <a href="search.html" class="btn btn-secondary">View Details</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="local-parking-card">
+                    <div class="owner-profile">
+                        <img src="Images/female.PNG" alt="Space Owner">
+                        <div class="owner-info">
+                            <h3>Moumi Ghosh</h3>
+                            <div class="reputation">
+                                <i class="fas fa-star"></i>
+                                <span>4.8</span>
+                                <span>(85 reviews)</span>
+                            </div>
+                            <span class="verified"><i class="fas fa-check-circle"></i> Verified Owner</span>
+                        </div>
+                    </div>
+                    <div class="space-details">
+                        <h4>Garage Space - Residential Zone</h4>
+                        <p><i class="fas fa-map-marker-alt"></i> New Town, Kolkata, 3.8 km away</p>
+                        <div class="amenities">
+                            <span><i class="fas fa-car"></i> 1 spot</span>
+                            <span><i class="fas fa-video"></i> CCTV</span>
+                            <span><i class="fas fa-umbrella"></i> Covered</span>
+                        </div>
+                        <div class="price">
+                            <strong>₹80/hour
+                            </strong>
+                            <a href="search.html" class="btn btn-secondary">View Details</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="become-owner">
+                <h3>Have a Parking Space?</h3>
+                <p>Turn your unused parking space into income. Join our network of trusted parking space owners.</p>
+                <a href="list-space.html" class="btn btn-primary">List Your Space</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h2><span>ParkIn</span></h2>
+
+                <p>Decentralized parking solutions for everyone</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="search.html">Find Parking</a></li>
+                    <li><a href="list-space.html">List Your Space</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="terms.html">Terms & Conditions</a></li>
+                    <li><a href="privacy.html">Privacy Policy</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Connect With Us</h3>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 ParkIn. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- QR Code Modal -->
+    <div class="qr-modal" id="qrModal">
+        <div class="qr-content">
+            <button class="qr-close" onclick="closeQRModal()">×</button>
+            <div class="qr-header">
+                <h3>Booking Confirmed!</h3>
+                <p>Show this QR code to the space provider</p>
+            </div>
+            <div class="qr-code-container">
+                <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=PARKNET-BOOKING-123" alt="Booking QR Code">
+            </div>
+            <div class="booking-details">
+                <div class="booking-detail">
+                    <span>Booking ID</span>
+                    <strong>#PK12345</strong>
+                </div>
+                <div class="booking-detail">
+                    <span>Location</span>
+                    <strong>Central Parking</strong>
+                </div>
+                <div class="booking-detail">
+                    <span>Duration</span>
+                    <strong>2 hours</strong>
+                </div>
+                <div class="booking-detail">
+                    <span>Amount Paid</span>
+                    <strong>₹40/hour</strong>
+                </div>
+            </div>
+            <div class="qr-actions">
+                <button class="download-btn">
+                    <i class="fas fa-download"></i>
+                    Download QR
+                </button>
+                <button class="share-btn">
+                    <i class="fas fa-share-alt"></i>
+                    Share
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- QR Scanner Interface (for space providers) -->
+    <div class="scanner-container" id="scannerContainer" style="display: none;">
+        <div class="scanner-header">
+            <h3>Scan Booking QR Code</h3>
+            <p>Position the QR code within the frame to verify booking</p>
+        </div>
+        <div class="scanner-view">
+            <div class="scan-area">
+                <div class="scan-line"></div>
+            </div>
+            <video id="scanner-video" style="width: 100%; height: 100%; object-fit: cover;"></video>
+            <div class="scanner-overlay" id="scannerOverlay">
+                <span>Camera loading...</span>
+            </div>
+        </div>
+        <div class="scanner-controls">
+            <button class="scan-btn" onclick="startScanning()">
+                <i class="fas fa-camera"></i>
+                Start Scanning
+            </button>
+            <button class="switch-camera" onclick="switchCamera()">
+                <i class="fas fa-sync"></i>
+                Switch Camera
+            </button>
+        </div>
+        <div class="scan-result" id="scanResult">
+            <h4>Booking Details</h4>
+            <div class="booking-details">
+                <!-- Will be populated when QR is scanned -->
+            </div>
+        </div>
+    </div>
+
+    <script src="js/main.js"></script>
+    <script src="js/voice-commands.js"></script>
+    <script src="https://unpkg.com/qr-scanner@1.4.2/qr-scanner.umd.min.js"></script>
+    <script src="js/qr-handler.js"></script>
+</body>
+</html> 

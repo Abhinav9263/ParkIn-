@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile - ParkIn</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/profile.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&family=Hubot+Sans:ital,wght@0,200..900;1,200..900&family=Iceland&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Nova+Square&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Space+Grotesk:wght@300..700&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&family=Yatra+One&display=swap');
+    </style>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&family=Hubot+Sans:ital,wght@0,200..900;1,200..900&family=Iceland&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Nova+Square&family=Oxanium:wght@200..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Space+Grotesk:wght@300..700&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&family=Yatra+One&display=swap');
+    </style>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&family=Hubot+Sans:ital,wght@0,200..900;1,200..900&family=Iceland&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Nova+Square&family=Oxanium:wght@200..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Space+Grotesk:wght@300..700&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&family=Yatra+One&display=swap');
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-brand">
+            <a href="index.html"><span class="parknet-font">ParkIn</span></a>
+        </div>
+        <div class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <ul class="nav-menu">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="search.html">Find Parking</a></li>
+            <li><a href="list-space.html">List Your Space</a></li>
+            <li><a href="bookings.html">My Bookings</a></li>
+            <li><a href="profile.html" class="active">Profile</a></li>
+            <li><button class="theme-toggle">
+                <i class="fas fa-moon"></i>
+            </button></li>
+        </ul>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="profile-container">
+        <div class="profile-header">
+            <div class="profile-avatar">
+                <img src="https://images.unsplash.com/photo-1633332755192-727a05c4013d?w=400" alt="Profile Picture">
+                <button class="edit-avatar">
+                    <i class="fas fa-camera"></i>
+                </button>
+            </div>
+            <h1>John Doe</h1>
+            <p class="member-since">Member since January 2025</p>
+        </div>
+
+        <div class="profile-content">
+            <!-- Personal Information -->
+            <section class="profile-section">
+                <h2><i class="fas fa-user"></i> Personal Information</h2>
+                <form id="personal-info-form">
+                    <div class="form-group">
+                        <label for="fullname">Full Name</label>
+                        <input type="text" id="fullname" value="John Doe" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" value="john.doe@example.com" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" value="+1 (555) 123-4567" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Save Changes</button>
+                </form>
+            </section>
+
+            <!-- Vehicle Information -->
+            <section class="profile-section">
+                <h2><i class="fas fa-car"></i> Vehicle Information</h2>
+                <div class="vehicles-list">
+                    <div class="vehicle-card">
+                        <div class="vehicle-info">
+                            <h3>Mahindra XUV700</h3>
+                            <p>License Plate: WB 07 EF 9012</p>
+                            <p>Color: Electric Blue</p>
+                        </div>
+                        <div class="vehicle-actions">
+                            <button class="btn btn-secondary"><i class="fas fa-edit"></i></button>
+                            <button class="btn btn-danger"><i class="fas fa-trash"></i></button>
+                        </div>
+                    </div>
+                    <button class="btn btn-primary add-vehicle">
+                        <i class="fas fa-plus"></i> Add Vehicle
+                    </button>
+                </div>
+            </section>
+
+            <!-- Payment Methods -->
+            <section class="profile-section">
+                <h2><i class="fas fa-credit-card"></i> Payment Methods</h2>
+                <div class="payment-methods">
+                    <div class="payment-card">
+                        <div class="card-info">
+                            <i class="fab fa-cc-visa"></i>
+                            <span>•••• •••• •••• 1234</span>
+                            <span>Expires 12/25</span>
+                        </div>
+                        <div class="card-actions">
+                            <button class="btn btn-danger"><i class="fas fa-trash"></i></button>
+                        </div>
+                    </div>
+                    <button class="btn btn-primary add-payment">
+                        <i class="fas fa-plus"></i> Add Payment Method
+                    </button>
+                </div>
+            </section>
+
+            <!-- Account Settings -->
+            <section class="profile-section">
+                <h2><i class="fas fa-cog"></i> Account Settings</h2>
+                <div class="settings-list">
+                    <div class="setting-item">
+                        <div class="setting-info">
+                            <h3>Email Notifications</h3>
+                            <p>Receive updates about your bookings</p>
+                        </div>
+                        <label class="switch">
+                            <input type="checkbox" checked>
+                            <span class="slider"></span>
+                        </label>
+                    </div>
+                    <div class="setting-item">
+                        <div class="setting-info">
+                            <h3>SMS Notifications</h3>
+                            <p>Get text messages for important updates</p>
+                        </div>
+                        <label class="switch">
+                            <input type="checkbox">
+                            <span class="slider"></span>
+                        </label>
+                    </div>
+                    <div class="setting-item">
+                        <div class="setting-info">
+                            <h3>Two-Factor Authentication</h3>
+                            <p>Add an extra layer of security</p>
+                        </div>
+                        <label class="switch">
+                            <input type="checkbox">
+                            <span class="slider"></span>
+                        </label>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Parking History Map -->
+            <section class="profile-section">
+                <h2><i class="fas fa-map-marker-alt"></i> Parking History</h2>
+                <div class="parking-history">
+                    <div id="history-map" class="history-map"></div>
+                    <div class="history-stats">
+                        <div class="stat-card">
+                            <i class="fas fa-car"></i>
+                            <h3>Total Parkings</h3>
+                            <p>24</p>
+                        </div>
+                        <div class="stat-card">
+                            <i class="fas fa-clock"></i>
+                            <h3>Hours Parked</h3>
+                            <p>156</p>
+                        </div>
+                        <div class="stat-card">
+                            <i class="fas fa-map"></i>
+                            <h3>Unique Locations</h3>
+                            <p>12</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Danger Zone -->
+            <section class="profile-section danger-zone">
+                <h2><i class="fas fa-exclamation-triangle"></i> Danger Zone</h2>
+                <div class="danger-actions">
+                    <button class="btn btn-danger">Delete Account</button>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h2><span>ParkIn</span></h2>
+                <p>Decentralized parking solutions for everyone</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="search.html">Find Parking</a></li>
+                    <li><a href="list-space.html">List Your Space</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Connect With Us</h3>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 ParkIn. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Add Vehicle Modal -->
+    <div id="vehicle-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2>Add Vehicle</h2>
+            <form id="vehicle-form">
+                <div class="form-group">
+                    <label for="vehicle-make">Make</label>
+                    <input type="text" id="vehicle-make" required>
+                </div>
+                <div class="form-group">
+                    <label for="vehicle-model">Model</label>
+                    <input type="text" id="vehicle-model" required>
+                </div>
+                <div class="form-group">
+                    <label for="vehicle-plate">License Plate</label>
+                    <input type="text" id="vehicle-plate" required>
+                </div>
+                <div class="form-group">
+                    <label for="vehicle-color">Color</label>
+                    <input type="text" id="vehicle-color" required>
+                </div>
+                <div class="modal-actions">
+                    <button type="submit" class="btn btn-primary">Add Vehicle</button>
+                    <button type="button" class="btn btn-secondary close-modal">Cancel</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Add Payment Modal -->
+    <div id="payment-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2>Add Payment Method</h2>
+            <form id="payment-form">
+                <div class="form-group">
+                    <label for="card-number">Card Number</label>
+                    <input type="text" id="card-number" placeholder="1234 5678 9012 3456" required>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="expiry-date">Expiry Date</label>
+                        <input type="text" id="expiry-date" placeholder="MM/YY" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="cvv">CVV</label>
+                        <input type="text" id="cvv" placeholder="123" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="card-name">Name on Card</label>
+                    <input type="text" id="card-name" required>
+                </div>
+                <div class="modal-actions">
+                    <button type="submit" class="btn btn-primary">Add Card</button>
+                    <button type="button" class="btn btn-secondary close-modal">Cancel</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="js/main.js"></script>
+    <script src="js/profile.js"></script>
+</body>
+</html> 

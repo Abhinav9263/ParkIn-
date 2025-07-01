@@ -1,0 +1,136 @@
+/* Terms and Conditions Page Styles */
+.terms-container {
+    max-width: 1000px;
+    margin: 2rem auto;
+    padding: 0 1.5rem;
+}
+
+.terms-container h1 {
+    text-align: center;
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+}
+
+.last-updated {
+    text-align: center;
+    color: var(--text-muted);
+    margin-bottom: 2rem;
+    font-style: italic;
+}
+
+.terms-section {
+    background: var(--card-bg);
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.terms-section h2 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+}
+
+.terms-section p {
+    line-height: 1.6;
+    margin-bottom: 1rem;
+    color: var(--text-color);
+}
+
+.terms-section ul {
+    list-style-type: none;
+    padding-left: 1.5rem;
+}
+
+.terms-section ul li {
+    margin-bottom: 0.75rem;
+    position: relative;
+    line-height: 1.5;
+}
+
+.terms-section ul li::before {
+    content: "•";
+    color: var(--primary-color);
+    position: absolute;
+    left: -1.5rem;
+    font-weight: bold;
+}
+
+.terms-section strong {
+    color: var(--primary-color);
+    font-weight: 600;
+}
+
+.terms-section a {
+    color: var(--primary-color);
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    transition: border-color 0.3s ease;
+}
+
+.terms-section a:hover {
+    border-bottom-color: var(--primary-color);
+}
+
+.contact-info {
+    background: var(--bg-light);
+    padding: 1.5rem;
+    border-radius: 6px;
+    margin-top: 1rem;
+}
+
+.contact-info p {
+    margin-bottom: 0.5rem;
+}
+
+.contact-info p:last-child {
+    margin-bottom: 0;
+}
+
+/* Dark theme adjustments */
+[data-theme="dark"] .terms-section {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+[data-theme="dark"] .contact-info {
+    background: var(--card-bg);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .terms-container {
+        margin: 1rem auto;
+    }
+
+    .terms-section {
+        padding: 1.25rem;
+        margin-bottom: 1rem;
+    }
+
+    .terms-section h2 {
+        font-size: 1.25rem;
+    }
+
+    .contact-info {
+        padding: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .terms-container {
+        padding: 0 1rem;
+    }
+
+    .terms-section {
+        padding: 1rem;
+    }
+
+    .terms-section ul {
+        padding-left: 1rem;
+    }
+
+    .terms-section ul li::before {
+        left: -1rem;
+    }
+} 

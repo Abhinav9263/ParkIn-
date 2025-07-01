@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>List Your Space - ParkIn</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/list-space.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&family=Hubot+Sans:ital,wght@0,200..900;1,200..900&family=Iceland&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Nova+Square&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Space+Grotesk:wght@300..700&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&family=Yatra+One&display=swap');
+    </style>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&family=Hubot+Sans:ital,wght@0,200..900;1,200..900&family=Iceland&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Nova+Square&family=Oxanium:wght@200..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Space+Grotesk:wght@300..700&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&family=Yatra+One&display=swap');
+    </style>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&family=Hubot+Sans:ital,wght@0,200..900;1,200..900&family=Iceland&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Nova+Square&family=Oxanium:wght@200..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Space+Grotesk:wght@300..700&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&family=Yatra+One&display=swap');
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-brand">
+            <a href="index.html"><span class="parknet-font">ParkIn</span></a>
+        </div>
+        <div class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <ul class="nav-menu">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="search.html">Find Parking</a></li>
+            <li><a href="list-space.html" class="active">List Your Space</a></li>
+            <li><a href="bookings.html">My Bookings</a></li>
+            <li><a href="profile.html">Profile</a></li>
+            <li><button class="theme-toggle">
+                <i class="fas fa-moon"></i>
+            </button></li>
+        </ul>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="list-space-container">
+        <h1>List Your Parking Space</h1>
+        <p class="subtitle">Earn money by sharing your unused parking space</p>
+
+        <form id="list-space-form" class="list-space-form">
+            <!-- Basic Information -->
+            <section class="form-section">
+                <h2>Basic Information</h2>
+                <div class="form-group">
+                    <label for="space-name">Space Name</label>
+                    <input type="text" id="space-name" required placeholder="e.g., Downtown Secure Parking">
+                </div>
+                <div class="form-group">
+                    <label for="description">Description</label>
+                    <textarea id="description" rows="4" required placeholder="Describe your parking space..."></textarea>
+                </div>
+            </section>
+
+            <!-- Location -->
+            <section class="form-section">
+                <h2>Location</h2>
+                <div class="form-group">
+                    <label for="address">Address</label>
+                    <input type="text" id="address" required placeholder="Full address">
+                </div>
+                <div id="location-map"></div>
+                <p class="help-text">Click on the map to set your parking space location</p>
+            </section>
+
+            <!-- Pricing -->
+            <section class="form-section">
+                <h2>Pricing</h2>
+                <div class="form-group">
+                    <label for="hourly-rate">Hourly Rate (₹)</label>
+                    <input type="number" id="hourly-rate" required min="1" step="0.5">
+                </div>
+                <div class="form-group">
+                    <label for="daily-rate">Daily Rate (₹)</label>
+                    <input type="number" id="daily-rate" required min="1">
+                </div>
+            </section>
+
+            <!-- Facilities -->
+            <section class="form-section">
+                <h2>Facilities</h2>
+                <div class="facilities-grid">
+                    <label class="facility-option">
+                        <input type="checkbox" name="facilities" value="ev-charging">
+                        <span class="facility-card">
+                            <i class="fas fa-charging-station"></i>
+                            <span>EV Charging</span>
+                        </span>
+                    </label>
+                    <label class="facility-option">
+                        <input type="checkbox" name="facilities" value="cctv">
+                        <span class="facility-card">
+                            <i class="fas fa-video"></i>
+                            <span>CCTV</span>
+                        </span>
+                    </label>
+                    <label class="facility-option">
+                        <input type="checkbox" name="facilities" value="covered">
+                        <span class="facility-card">
+                            <i class="fas fa-warehouse"></i>
+                            <span>Covered</span>
+                        </span>
+                    </label>
+                    <label class="facility-option">
+                        <input type="checkbox" name="facilities" value="security">
+                        <span class="facility-card">
+                            <i class="fas fa-shield-alt"></i>
+                            <span>24/7 Security</span>
+                        </span>
+                    </label>
+                    <label class="facility-option">
+                        <input type="checkbox" name="facilities" value="lighting">
+                        <span class="facility-card">
+                            <i class="fas fa-lightbulb"></i>
+                            <span>Lighting</span>
+                        </span>
+                    </label>
+                    <label class="facility-option">
+                        <input type="checkbox" name="facilities" value="disabled">
+                        <span class="facility-card">
+                            <i class="fas fa-wheelchair"></i>
+                            <span>Disabled Access</span>
+                        </span>
+                    </label>
+                </div>
+            </section>
+
+            <!-- Photos -->
+            <section class="form-section">
+                <h2>Photos</h2>
+                <div class="photo-upload-container">
+                    <div class="photo-upload">
+                        <input type="file" id="photo-upload" multiple accept="image/*">
+                        <i class="fas fa-cloud-upload-alt"></i>
+                        <p>Drag and drop photos here or click to upload</p>
+                        <p class="help-text">Upload at least 3 photos of your parking space</p>
+                    </div>
+                    <div id="photo-preview" class="photo-preview"></div>
+                </div>
+            </section>
+
+            <!-- Availability -->
+            <section class="form-section">
+                <h2>Availability</h2>
+                <div class="availability-grid">
+                    <div class="day-selector">
+                        <label>
+                            <input type="checkbox" name="days" value="monday" checked>
+                            <span>Monday</span>
+                        </label>
+                        <label>
+                            <input type="checkbox" name="days" value="tuesday" checked>
+                            <span>Tuesday</span>
+                        </label>
+                        <label>
+                            <input type="checkbox" name="days" value="wednesday" checked>
+                            <span>Wednesday</span>
+                        </label>
+                        <label>
+                            <input type="checkbox" name="days" value="thursday" checked>
+                            <span>Thursday</span>
+                        </label>
+                        <label>
+                            <input type="checkbox" name="days" value="friday" checked>
+                            <span>Friday</span>
+                        </label>
+                        <label>
+                            <input type="checkbox" name="days" value="saturday" checked>
+                            <span>Saturday</span>
+                        </label>
+                        <label>
+                            <input type="checkbox" name="days" value="sunday" checked>
+                            <span>Sunday</span>
+                        </label>
+                    </div>
+                    <div class="time-selector">
+                        <div class="form-group">
+                            <label for="start-time">Start Time</label>
+                            <input type="time" id="start-time" value="00:00">
+                        </div>
+                        <div class="form-group">
+                            <label for="end-time">End Time</label>
+                            <input type="time" id="end-time" value="23:59">
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <div class="form-actions">
+                <button type="submit" class="btn btn-primary">List Your Space</button>
+                <button type="button" class="btn btn-secondary">Save as Draft</button>
+            </div>
+        </form>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h2><span>ParkIn</span></h2>
+                <p>Decentralized parking solutions for everyone</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="search.html">Find Parking</a></li>
+                    <li><a href="list-space.html">List Your Space</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Connect With Us</h3>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 ParkIn. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/list-space.js"></script>
+</body>
+</html> 
